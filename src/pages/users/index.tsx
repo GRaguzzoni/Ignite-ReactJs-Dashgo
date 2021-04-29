@@ -2,7 +2,6 @@ import { Checkbox, Button, Icon, Table, Tbody, Td, Th, Thead, Tr, Box, Flex, Hea
 import NextLink from "next/link";
 import { useState } from "react";
 import { RiAddLine } from "react-icons/ri";
-import { QueryClient } from "react-query";
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
@@ -25,6 +24,7 @@ export default function UserList() {
       const response = await api.get(`users/${userId}`);
 
       return response.data;
+
     }, {
       staleTime: 1000 * 60 * 10,
     })
